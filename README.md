@@ -47,5 +47,6 @@ git clone https://github.com/MohamedWElteir/CES.git
 dotnet run
 ```
 
-### Note: The application is configured to use an in-memory database by default. You can change the database provider in the `appsettings.json` file.
+### Note: The application is configured to use an in-memory database by default.
+
 By default, you will see two students and two courses in the database, with two initial enrollments. That's thanks to the database seeding done in the `DbContext`. You can add more students and courses as needed.
