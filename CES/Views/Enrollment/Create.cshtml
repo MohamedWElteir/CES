@@ -44,6 +44,7 @@
                 const courseId = $(this).val();
                 if (courseId) {
                     $.getJSON('/Enrollment/GetAvailableSlots', { courseId: courseId }, function(data) {
+
                         $('#availableSlots').text('Available slots: ' + data.availableSlots);
                     });
                 } else {

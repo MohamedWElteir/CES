@@ -10,4 +10,6 @@ public interface IStudentService
     Task UpdateStudentAsync(Student student);
     Task DeleteStudentAsync(Guid id);
     Task<bool> EmailExistsAsync(string email);
+    Task<bool> NationalIdExistsAsync(string studentNationalId);
+
 }

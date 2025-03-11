@@ -21,13 +21,19 @@ public class StudentController(IStudentService studentService) : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(Student student)
     {
-        if (!ModelState.IsValid) return View(student);
 
         if (await studentService.EmailExistsAsync(student.Email))
         {
             ModelState.AddModelError("Email", "Email already exists");
-            return View(student);
         }
+
+        if(await studentService.NationalIdExistsAsync(student.NationalId))
+        {
+            ModelState.AddModelError("NationalId", "National ID already exists");
+        }
+
+        if (!ModelState.IsValid) return View(student);
+
         await studentService.CreateStudentAsync(student);
         return RedirectToAction(nameof(Index));
     }

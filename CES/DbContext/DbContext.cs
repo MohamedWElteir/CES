@@ -69,7 +69,12 @@ public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
                 Title = "Advanced Databases",
                 Description = "Deep dive into database management systems.",
                 MaximumCapacity = 25
-            }
+            },
+            new Course
+            {
+                CourseIdGuid = Guid.NewGuid(),
+                Title = "Advanced Programming",
+                MaximumCapacity = 5            }
         );
 
 

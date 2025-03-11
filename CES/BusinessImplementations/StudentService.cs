@@ -47,4 +47,9 @@ public class StudentService(MyDbContext dbContext) : IStudentService
     {
         return await dbContext.Students.AnyAsync(s => s.Email == email);
     }
+
+    public async Task<bool> NationalIdExistsAsync(string studentNationalId)
+    {
+        return await dbContext.Students.AnyAsync(s => s.NationalId == studentNationalId);
+    }
 }
