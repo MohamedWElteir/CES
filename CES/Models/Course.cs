@@ -12,7 +12,7 @@ public class Course
     [Required]
     [MaxLength(100)]
     [DisplayName("Course Title")]
-    public string Title { get; set; } = string.Empty;
+    public string Title { get; init; } = string.Empty;
 
 
     [MaxLength(int.MaxValue)]

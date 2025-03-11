@@ -25,9 +25,14 @@ public class EnrollmentService(MyDbContext context) : IEnrollmentService
 
     public async Task<Enrollment> CreateEnrollmentAsync(Enrollment enrollment)
     {
-        if (await IsCourseFullAsync(enrollment.CourseIdGuid) || await IsStudentEnrolledAsync(enrollment.CourseIdGuid, enrollment.StudentIdGuid))
+        if (await IsCourseFullAsync(enrollment.CourseIdGuid))
         {
-            throw new InvalidOperationException("Cannot enroll student.");
+            throw new InvalidOperationException("Course is full");
+        }
+
+        if (await IsStudentEnrolledAsync(enrollment.CourseIdGuid, enrollment.StudentIdGuid))
+        {
+            throw new InvalidOperationException("Student is already enrolled in this course");
         }
 
         enrollment.EnrollmentIdGuid = Guid.NewGuid();
