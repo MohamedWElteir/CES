@@ -56,4 +56,11 @@ public class EnrollmentController(IEnrollmentService enrollmentService,
         await enrollmentService.DeleteEnrollmentAsync(id);
         return RedirectToAction(nameof(Index));
     }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAvailableSlots(Guid courseId)
+    {
+        var availableSlots = await enrollmentService.GetAvailableSlotsAsync(courseId);
+        return Json(new { availableSlots });
+    }
 }

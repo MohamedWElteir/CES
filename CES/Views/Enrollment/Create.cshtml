@@ -36,21 +36,29 @@
     </div>
 </div>
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-    <script>
-        $(document).ready(function() {
-            $('#courseDropdown').change(function() {
-                const courseId = $(this).val();
-                if (courseId) {
-                    $.getJSON('/Enrollment/GetAvailableSlots', { courseId: courseId }, function(data) {
 
-                        $('#availableSlots').text('Available slots: ' + data.availableSlots);
-                    });
-                } else {
-                    $('#availableSlots').text('Select a course to see available slots');
-                }
-            });
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+<script>
+    $(document).ready(function() {
+        $('#courseDropdown').change(function() {
+            const selectedValue = $(this).val();
+            if (selectedValue) {
+                $.ajax({
+                    url: '/Enrollment/GetAvailableSlots',
+                    type: 'GET',
+                    data: { courseId: selectedValue },
+                    success: function(result) {
+                        $('#availableSlots').text('Available slots: ' + result.availableSlots);
+                    },
+                    error: function() {
+                        $('#availableSlots').text('Error loading available slots');
+                    }
+                });
+            } else {
+                $('#availableSlots').text('Select a course to see available slots');
+            }
         });
-    </script>
+    });
+</script>
 }
