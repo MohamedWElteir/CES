@@ -18,10 +18,13 @@ public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+
+
         modelBuilder.Entity<Enrollment>()
             .HasOne(e => e.Student)
-            .WithMany()
-            .HasForeignKey(e => e.StudentIdGuid);
+            .WithMany(s => s.Enrollments)
+            .HasForeignKey(e => e.StudentIdGuid)
+            .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Enrollment>()
             .HasOne(e => e.Course)

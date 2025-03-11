@@ -48,11 +48,14 @@ public class StudentService(MyDbContext dbContext) : IStudentService
 
     public async Task DeleteStudentAsync(Guid id)
     {
-        var student = await dbContext.Students.FindAsync(id);
+        var student = await dbContext.Students
+            .Include(s => s.Enrollments)
+            .FirstOrDefaultAsync(s => s.StudentIdGuid == id);
         if (student != null)
         {
-                dbContext.Students.Remove(student);
-                await dbContext.SaveChangesAsync();
+            dbContext.Enrollments.RemoveRange(student.Enrollments);
+            dbContext.Students.Remove(student);
+            await dbContext.SaveChangesAsync();
         }
     }
 

@@ -10,7 +10,7 @@ public class Enrollment
     public Guid CourseIdGuid { get; init; }
     public Guid StudentIdGuid { get; init; }
 
-    public Student? Student { get; set; }
-    public Course? Course { get; set; }
+    public Student? Student { get; set; } // navigation property
+    public Course? Course { get; set; } // navigation property
 
 }

@@ -30,4 +30,6 @@ public class Student
 
     [MaxLength(11)]
     public string? PhoneNumber { get; set; }
+
+    public virtual ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
 }
