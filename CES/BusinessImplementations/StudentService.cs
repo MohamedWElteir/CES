@@ -7,6 +7,19 @@ namespace CES.BusinessImplementations;
 
 public class StudentService(MyDbContext dbContext) : IStudentService
 {
+    public async Task<(IEnumerable<Student> Students, int TotalPages)> GetPaginatedStudentsAsync(int page, int pageSize)
+    {
+        var totalItems = await dbContext.Students.CountAsync();
+        var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+        var students = await dbContext.Students
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return (students, totalPages);
+    }
+
     public async Task<IEnumerable<Student>> GetAllStudentsAsync()
     {
         return await dbContext.Students.ToListAsync();

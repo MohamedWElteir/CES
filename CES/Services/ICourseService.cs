@@ -4,6 +4,7 @@ namespace CES.Services;
 
 public interface ICourseService
 {
+    Task<(IEnumerable<Course> Courses, int TotalPages)> GetPaginatedCoursesAsync(int page, int pageSize);
     Task<IEnumerable<Course>> GetAllCoursesAsync();
     Task<Course?> GetCourseByIdAsync(Guid id);
     Task<Course> CreateCourseAsync(Course course);

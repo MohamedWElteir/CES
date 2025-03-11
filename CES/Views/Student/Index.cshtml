@@ -24,17 +24,28 @@
     <tbody>
     @foreach (var student in Model)
     {
-    <tr>
-        <td>@student.FullName</td>
-        <td>@student.Email</td>
-        <td>@student.DateOfBirth.ToShortDateString()</td>
-        <td>@student.NationalId</td>
-        <td>@student.PhoneNumber</td>
-        <td>
-            <a asp-action="Edit" asp-route-id="@student.StudentIdGuid" class="btn btn-warning btn-sm">Edit</a> |
-            <a asp-action="Delete" asp-route-id="@student.StudentIdGuid" class="btn btn-danger btn-sm">Delete</a>
-        </td>
-    </tr>
+        <tr>
+            <td>@student.FullName</td>
+            <td>@student.Email</td>
+            <td>@student.DateOfBirth.ToShortDateString()</td>
+            <td>@student.NationalId</td>
+            <td>@student.PhoneNumber</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@student.StudentIdGuid" class="btn btn-warning btn-sm">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@student.StudentIdGuid" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
     }
     </tbody>
 </table>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        @for (var i = 1; i <= ViewBag.TotalPages; i++)
+        {
+        <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+            <a class="page-link" asp-action="Index" asp-route-page="@i">@i</a>
+        </li>
+        }
+    </ul>
+</nav>

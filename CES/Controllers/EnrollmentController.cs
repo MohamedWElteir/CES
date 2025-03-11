@@ -8,9 +8,14 @@ public class EnrollmentController(IEnrollmentService enrollmentService,
     IStudentService studentService,
     ICourseService courseService) : Controller
 {
-    public async Task<IActionResult> Index()
+    private const int PageSize = 5;
+    public async Task<IActionResult> Index(int page = 1)
     {
-        var enrollments = await enrollmentService.GetAllEnrollmentsAsync();
+        var (enrollments, totalPages) = await enrollmentService.GetPaginatedEnrollmentsAsync(page, PageSize);
+        // var enrollments = await enrollmentService.GetAllEnrollmentsAsync();
+
+        ViewBag.CurrentPage = page;
+        ViewBag.TotalPages = totalPages;
         return View(enrollments);
     }
 

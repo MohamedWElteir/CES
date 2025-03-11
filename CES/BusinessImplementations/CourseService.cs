@@ -7,6 +7,19 @@ namespace CES.BusinessImplementations;
 
 public class CourseService(MyDbContext dbContext) : ICourseService
 {
+    public async Task<(IEnumerable<Course> Courses, int TotalPages)> GetPaginatedCoursesAsync(int page, int pageSize)
+    {
+        var totalItems = await dbContext.Courses.CountAsync();
+        var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+        var courses = await dbContext.Courses
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return (courses, totalPages);
+    }
+
     public async Task<IEnumerable<Course>> GetAllCoursesAsync()
     {
        return await dbContext.Courses.ToListAsync();

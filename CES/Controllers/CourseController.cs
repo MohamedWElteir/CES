@@ -6,14 +6,19 @@ namespace CES.Controllers;
 
 public class CourseController(ICourseService courseService, IEnrollmentService enrollmentService) : Controller
 {
-    public async Task<IActionResult> Index()
+    private const int PageSize = 5;
+    public async Task<IActionResult> Index(int page = 1)
     {
-        var courses = await courseService.GetAllCoursesAsync();
+        var (courses, totalPages) = await courseService.GetPaginatedCoursesAsync(page, PageSize);
         var enrollmentCounts = await enrollmentService.GetEnrollmentCountsAsync();
         ViewBag.EnrollmentCounts = enrollmentCounts;
 
+        ViewBag.CurrentPage = page;
+        ViewBag.TotalPages = totalPages;
+
         return View(courses);
     }
+
     public IActionResult Create()
     {
         return View();

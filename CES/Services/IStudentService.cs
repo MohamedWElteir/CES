@@ -4,6 +4,8 @@ namespace CES.Services;
 
 public interface IStudentService
 {
+    Task<(IEnumerable<Student> Students, int TotalPages)> GetPaginatedStudentsAsync(int page, int pageSize);
+
     Task<IEnumerable<Student>> GetAllStudentsAsync();
     Task<Student?> GetStudentByIdAsync(Guid id);
     Task<Student> CreateStudentAsync(Student student);

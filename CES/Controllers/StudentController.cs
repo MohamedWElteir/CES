@@ -6,9 +6,14 @@ namespace CES.Controllers;
 
 public class StudentController(IStudentService studentService) : Controller
 {
-    public async Task<IActionResult> Index()
+    private const int PageSize = 5;
+    public async Task<IActionResult> Index(int page = 1)
     {
-        var students = await studentService.GetAllStudentsAsync();
+        var (students, totalPages) = await studentService.GetPaginatedStudentsAsync(page, PageSize);
+        // var students = await studentService.GetAllStudentsAsync();
+
+        ViewBag.CurrentPage = page;
+        ViewBag.TotalPages = totalPages;
         return View(students);
     }
 

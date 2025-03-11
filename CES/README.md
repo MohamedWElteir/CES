@@ -14,13 +14,18 @@
     - Set maximum capacity for each course
     - Optional course descriptions
     - Track available slots dynamically
+  
 
 - **Enrollment Management**
     - Enroll students in courses
     - Prevent duplicate enrollments
     - Real-time available slots checking
     - View all enrollments with student and course details
+  
 
+***
+### Implemented pagination defaults to 5 rows per page
+***
 ## Technology Stack
 
 - ASP.NET Core MVC 9.0

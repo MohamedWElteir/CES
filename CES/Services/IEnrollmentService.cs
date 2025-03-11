@@ -4,6 +4,8 @@ namespace CES.Services;
 
 public interface IEnrollmentService
 {
+    Task<(IEnumerable<Enrollment> Enrollments, int TotalPages)> GetPaginatedEnrollmentsAsync(int page, int pageSize);
+
     Task<IEnumerable<Enrollment>> GetAllEnrollmentsAsync();
     Task<Enrollment?> GetEnrollmentByIdAsync(Guid id);
     Task<Enrollment> CreateEnrollmentAsync(Enrollment enrollment);
