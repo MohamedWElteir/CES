@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gT2ZEY3+Ou819R4bmT31HwrVwwB2zGZG19+CzUAxe3I=",
+  "Hash": "o4kx4BsZu/cC4Gi7sYF75yYU2qmso0J2URfMvKec2Ds=",
   "Source": "CES",
   "BasePath": "_content/CES",
   "Mode": "Default",
@@ -288,27 +288,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\86bi5rbtwn-61n19gt1b8.gz",
-      "SourceId": "CES",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\",
-      "BasePath": "_content/CES",
-      "RelativePath": "favicon#[.{fingerprint=61n19gt1b8}]?.ico.gz",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\favicon.ico",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "Fingerprint": "nezsohjtde",
-      "Integrity": "wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\favicon.ico"
     },
     {
       "Identity": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\8s9l8wepfz-48y08845bh.gz",
@@ -962,6 +941,27 @@
       "OriginalItemSpec": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
+      "Identity": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\nnv2465vmb-lssz9ctt8k.gz",
+      "SourceId": "CES",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/CES",
+      "RelativePath": "icon#[.{fingerprint=lssz9ctt8k}]?.ico.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\icon.ico",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "90nnlu0ruj",
+      "Integrity": "x/4qaKjaHEfhGkNo/66t70aAObMXL0mMrrsioVZajvY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\icon.ico"
+    },
+    {
       "Identity": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\ntwsl0iazy-jjsuc0puko.gz",
       "SourceId": "CES",
       "SourceType": "Discovered",
@@ -1424,12 +1424,12 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\icon.ico",
       "SourceId": "CES",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\",
       "BasePath": "_content/CES",
-      "RelativePath": "favicon#[.{fingerprint}]?.ico",
+      "RelativePath": "icon#[.{fingerprint}]?.ico",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1438,11 +1438,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "61n19gt1b8",
-      "Integrity": "Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=",
+      "Fingerprint": "lssz9ctt8k",
+      "Integrity": "heX51VWwkycEWKxrWMhUmf+Dqih3p4GTpvv9NFtE1K4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot\\icon.ico"
     },
     {
       "Identity": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\js\\site.js",
@@ -3622,13 +3622,13 @@
       ]
     },
     {
-      "Route": "favicon.61n19gt1b8.ico",
-      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\86bi5rbtwn-61n19gt1b8.gz",
+      "Route": "icon.ico",
+      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\nnv2465vmb-lssz9ctt8k.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000405022276"
+          "Quality": "0.000077549438"
         }
       ],
       "ResponseHeaders": [
@@ -3638,176 +3638,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2468"
+          "Value": "12894"
         },
         {
           "Name": "ETag",
-          "Value": "\"wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0=\""
+          "Value": "\"x/4qaKjaHEfhGkNo/66t70aAObMXL0mMrrsioVZajvY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Mar 2025 11:39:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/x-icon"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "61n19gt1b8"
-        },
-        {
-          "Name": "label",
-          "Value": "favicon.ico"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
-        }
-      ]
-    },
-    {
-      "Route": "favicon.61n19gt1b8.ico",
-      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\favicon.ico",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5430"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/x-icon"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 11 Mar 2025 11:39:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "61n19gt1b8"
-        },
-        {
-          "Name": "label",
-          "Value": "favicon.ico"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
-        }
-      ]
-    },
-    {
-      "Route": "favicon.61n19gt1b8.ico.gz",
-      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\86bi5rbtwn-61n19gt1b8.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2468"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/x-icon"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 11 Mar 2025 11:39:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "61n19gt1b8"
-        },
-        {
-          "Name": "label",
-          "Value": "favicon.ico.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0="
-        }
-      ]
-    },
-    {
-      "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\86bi5rbtwn-61n19gt1b8.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000405022276"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2468"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 11 Mar 2025 11:39:01 GMT"
+          "Value": "Tue, 11 Mar 2025 17:50:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3827,19 +3666,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
+          "Value": "W/\"heX51VWwkycEWKxrWMhUmf+Dqih3p4GTpvv9NFtE1K4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+          "Value": "sha256-heX51VWwkycEWKxrWMhUmf+Dqih3p4GTpvv9NFtE1K4="
         }
       ]
     },
     {
-      "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\favicon.ico",
+      "Route": "icon.ico",
+      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\icon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3848,7 +3687,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5430"
+          "Value": "13458"
         },
         {
           "Name": "Content-Type",
@@ -3856,11 +3695,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
+          "Value": "\"heX51VWwkycEWKxrWMhUmf+Dqih3p4GTpvv9NFtE1K4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Mar 2025 11:39:01 GMT"
+          "Value": "Tue, 11 Mar 2025 17:50:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3870,13 +3709,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+          "Value": "sha256-heX51VWwkycEWKxrWMhUmf+Dqih3p4GTpvv9NFtE1K4="
         }
       ]
     },
     {
-      "Route": "favicon.ico.gz",
-      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\86bi5rbtwn-61n19gt1b8.gz",
+      "Route": "icon.ico.gz",
+      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\nnv2465vmb-lssz9ctt8k.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3885,7 +3724,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2468"
+          "Value": "12894"
         },
         {
           "Name": "Content-Type",
@@ -3893,11 +3732,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0=\""
+          "Value": "\"x/4qaKjaHEfhGkNo/66t70aAObMXL0mMrrsioVZajvY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Mar 2025 11:39:01 GMT"
+          "Value": "Tue, 11 Mar 2025 17:50:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3915,7 +3754,168 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0="
+          "Value": "sha256-x/4qaKjaHEfhGkNo/66t70aAObMXL0mMrrsioVZajvY="
+        }
+      ]
+    },
+    {
+      "Route": "icon.lssz9ctt8k.ico",
+      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\nnv2465vmb-lssz9ctt8k.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000077549438"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12894"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x/4qaKjaHEfhGkNo/66t70aAObMXL0mMrrsioVZajvY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 17:50:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"heX51VWwkycEWKxrWMhUmf+Dqih3p4GTpvv9NFtE1K4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lssz9ctt8k"
+        },
+        {
+          "Name": "label",
+          "Value": "icon.ico"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-heX51VWwkycEWKxrWMhUmf+Dqih3p4GTpvv9NFtE1K4="
+        }
+      ]
+    },
+    {
+      "Route": "icon.lssz9ctt8k.ico",
+      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\icon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13458"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"heX51VWwkycEWKxrWMhUmf+Dqih3p4GTpvv9NFtE1K4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 17:50:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lssz9ctt8k"
+        },
+        {
+          "Name": "label",
+          "Value": "icon.ico"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-heX51VWwkycEWKxrWMhUmf+Dqih3p4GTpvv9NFtE1K4="
+        }
+      ]
+    },
+    {
+      "Route": "icon.lssz9ctt8k.ico.gz",
+      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\obj\\Debug\\net9.0\\compressed\\nnv2465vmb-lssz9ctt8k.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12894"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x/4qaKjaHEfhGkNo/66t70aAObMXL0mMrrsioVZajvY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 17:50:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lssz9ctt8k"
+        },
+        {
+          "Name": "label",
+          "Value": "icon.ico.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-x/4qaKjaHEfhGkNo/66t70aAObMXL0mMrrsioVZajvY="
         }
       ]
     },

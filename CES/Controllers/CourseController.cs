@@ -4,11 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CES.Controllers;
 
-public class CourseController(ICourseService courseService) : Controller
+public class CourseController(ICourseService courseService, IEnrollmentService enrollmentService) : Controller
 {
     public async Task<IActionResult> Index()
     {
         var courses = await courseService.GetAllCoursesAsync();
+        var enrollmentCounts = await enrollmentService.GetEnrollmentCountsAsync();
+        ViewBag.EnrollmentCounts = enrollmentCounts;
+
         return View(courses);
     }
     public IActionResult Create()

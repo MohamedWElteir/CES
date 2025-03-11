@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CES.Models.Course>
+
+<h2>Courses</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Course</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Maximum Capacity</th>
+        <th>Available Slots</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var course in Model)
+    {
+        var enrolledCount = ViewBag.EnrollmentCounts != null && ViewBag.EnrollmentCounts.ContainsKey(course.CourseIdGuid)
+            ? ViewBag.EnrollmentCounts[course.CourseIdGuid]
+            : 0;
+        var availableSlots = course.MaximumCapacity - enrolledCount;
+
+        <tr>
+            <td>@course.Title</td>
+            <td>@course.Description</td>
+            <td>@course.MaximumCapacity</td>
+            <td>@availableSlots</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@course.CourseIdGuid" class="btn btn-warning btn-sm">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@course.CourseIdGuid" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

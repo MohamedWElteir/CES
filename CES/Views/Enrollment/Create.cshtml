@@ -1,0 +1,55 @@
+﻿@model CES.Models.Enrollment
+
+<h2>Create Enrollment</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="StudentIdGuid" class="control-label">Student</label>
+                <select asp-for="StudentIdGuid" class="form-control" asp-items="@(new SelectList(ViewBag.Students, "StudentIdGuid", "FullName"))">
+                    <option value="">-- Select Student --</option>
+                </select>
+                <span asp-validation-for="StudentIdGuid" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="CourseIdGuid" class="control-label">Course</label>
+                <select asp-for="CourseIdGuid" class="form-control" asp-items="@(new SelectList(ViewBag.Courses, "CourseIdGuid", "Title"))" id="courseDropdown">
+                    <option value="">-- Select Course --</option>
+                </select>
+                <span asp-validation-for="CourseIdGuid" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Available Slots:</label>
+                <span id="availableSlots" class="form-text">Select a course to see available slots</span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function() {
+            $('#courseDropdown').change(function() {
+                const courseId = $(this).val();
+                if (courseId) {
+                    $.getJSON('/Enrollment/GetAvailableSlots', { courseId: courseId }, function(data) {
+                        $('#availableSlots').text('Available slots: ' + data.availableSlots);
+                    });
+                } else {
+                    $('#availableSlots').text('Select a course to see available slots');
+                }
+            });
+        });
+    </script>
+}

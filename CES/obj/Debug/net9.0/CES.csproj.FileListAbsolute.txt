@@ -18,7 +18,6 @@ C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\scopedcss\Views\Shared\_Layou
 C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\scopedcss\bundle\CES.styles.css
 C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\scopedcss\projectbundle\CES.bundle.scp.css
 C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\compressed\n3fq9kuq5f-b9sayid5wm.gz
-C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\compressed\86bi5rbtwn-61n19gt1b8.gz
 C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\compressed\t8o65svirw-xtxxf3hu2r.gz
 C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\compressed\dv569kj97v-t1cqhe9u97.gz
 C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\compressed\338g5e03o1-c2jlpeoesf.gz
@@ -201,3 +200,4 @@ C:\Users\pc\RiderProjects\CES\CES\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysi
 C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\CES.csproj.AssemblyReference.cache
 C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\CES.sourcelink.json
 C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\CES.csproj.Up2Date
+C:\Users\pc\RiderProjects\CES\CES\obj\Debug\net9.0\compressed\nnv2465vmb-lssz9ctt8k.gz

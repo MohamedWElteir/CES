@@ -32,4 +32,28 @@ public class StudentController(IStudentService studentService) : Controller
         return RedirectToAction(nameof(Index));
     }
 
+    public async Task<IActionResult> Edit(Guid id)
+    {
+        var student = await studentService.GetStudentByIdAsync(id);
+        if (student is null) return NotFound();
+
+        return View(student);
+    }
+
+    public async Task<IActionResult> Delete(Guid id)
+    {
+        var student = await studentService.GetStudentByIdAsync(id);
+        if (student is null) return NotFound();
+
+        return View(student);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(Guid id)
+    {
+        await studentService.DeleteStudentAsync(id);
+        return RedirectToAction(nameof(Index));
+    }
+
 }

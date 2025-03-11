@@ -10,4 +10,6 @@ public interface IEnrollmentService
     Task DeleteEnrollmentAsync(Guid id);
     Task<bool> IsCourseFullAsync(Guid courseId);
     Task<bool> IsStudentEnrolledAsync(Guid courseId, Guid studentId);
+    Task<int> GetAvailableSlotsAsync(Guid courseId);
+    Task<Dictionary<Guid, int>> GetEnrollmentCountsAsync();
 }

@@ -1,0 +1,26 @@
+﻿@model CES.Models.Course
+
+<h2>Delete Course</h2>
+
+<div class="alert alert-danger">
+    <h4>Are you sure you want to delete this course?</h4>
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Title</dt>
+        <dd class="col-sm-10">@Model.Title</dd>
+
+        <dt class="col-sm-2">Description</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+
+        <dt class="col-sm-2">Maximum Capacity</dt>
+        <dd class="col-sm-10">@Model.MaximumCapacity</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CourseIdGuid" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>

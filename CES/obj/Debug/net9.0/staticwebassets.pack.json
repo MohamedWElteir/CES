@@ -9,8 +9,8 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\icon.ico",
+      "PackagePath": "staticwebassets\\icon.ico"
     },
     {
       "Id": "C:\\Users\\pc\\RiderProjects\\CES\\CES\\wwwroot\\js\\site.js",

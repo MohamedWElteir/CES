@@ -21,7 +21,7 @@ public class Student
     [MaxLength(14)]
     public string NationalId { get; init; } = string.Empty;
 
-    [Phone]
+
     [MaxLength(11)]
     public string PhoneNumber { get; set; } = string.Empty;
 }

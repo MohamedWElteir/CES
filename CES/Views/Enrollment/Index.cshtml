@@ -1,0 +1,29 @@
+﻿@model IEnumerable<CES.Models.Enrollment>
+
+<h2>Enrollments</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Enrollment</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Student Name</th>
+        <th>Course Title</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var enrollment in Model)
+    {
+    <tr>
+        <td>@enrollment.Student?.FullName</td>
+        <td>@enrollment.Course?.Title</td>
+        <td>
+            <a asp-action="Delete" asp-route-id="@enrollment.EnrollmentIdGuid" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>

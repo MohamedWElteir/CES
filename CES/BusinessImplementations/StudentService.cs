@@ -19,58 +19,27 @@ public class StudentService(MyDbContext dbContext) : IStudentService
 
     public async Task<Student> CreateStudentAsync(Student student)
     {
-        await using var transaction = await dbContext.Database.BeginTransactionAsync();
-        try
-        {
+
             student.StudentIdGuid = Guid.NewGuid();
             dbContext.Students.Add(student);
             await dbContext.SaveChangesAsync();
-            await transaction.CommitAsync();
             return student;
-        }
-        catch
-        {
-            await transaction.RollbackAsync();
-            throw;
-        }
-
 
     }
 
     public async Task UpdateStudentAsync(Student student)
     {
-        await using var transaction = await dbContext.Database.BeginTransactionAsync();
-
-        try
-        {
             dbContext.Entry(student).State = EntityState.Modified;
             await dbContext.SaveChangesAsync();
-            await transaction.CommitAsync();
-        }
-        catch
-        {
-            await transaction.RollbackAsync();
-            throw;
-        }
     }
 
     public async Task DeleteStudentAsync(Guid id)
     {
-        await using var transaction = await dbContext.Database.BeginTransactionAsync();
         var student = await dbContext.Students.FindAsync(id);
         if (student != null)
         {
-            try
-            {
                 dbContext.Students.Remove(student);
                 await dbContext.SaveChangesAsync();
-                await transaction.CommitAsync();
-            }
-            catch
-            {
-                await transaction.RollbackAsync();
-                throw;
-            }
         }
     }
 

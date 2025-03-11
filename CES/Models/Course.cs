@@ -14,6 +14,7 @@ public class Course
     public string Description { get; set; } = string.Empty;
 
     [Required]
+    [Range(1, 100)]
     public int MaximumCapacity { get; init; }
 
 }
