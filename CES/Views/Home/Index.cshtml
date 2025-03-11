@@ -1,8 +1,55 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">Course Enrollment System</h1>
+        <p class="lead">Manage your courses, students, and enrollments efficiently</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-book fs-1 text-primary mb-3"></i>
+                    <h3 class="card-title">Courses</h3>
+                    <p class="card-text">Manage course listings, capacities, and descriptions.</p>
+                    <a asp-controller="Course" asp-action="Index" class="btn btn-primary">
+                        View Courses
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-people fs-1 text-success mb-3"></i>
+                    <h3 class="card-title">Students</h3>
+                    <p class="card-text">Register and manage student information.</p>
+                    <a asp-controller="Student" asp-action="Index" class="btn btn-success">
+                        View Students
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-pencil-square fs-1 text-warning mb-3"></i>
+                    <h3 class="card-title">Enrollments</h3>
+                    <p class="card-text">Manage course enrollments and track availability.</p>
+                    <a asp-controller="Enrollment" asp-action="Index" class="btn btn-warning">
+                        View Enrollments
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+}

@@ -11,20 +11,20 @@
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">CES</a>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Student" asp-action="Index">Students</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Course" asp-action="Index">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Enrollment" asp-action="Index">Enrollments</a>
-                    </li>
-                </ul>
-            </div>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Main menu</a>
+            @* <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between"> *@
+            @*     <ul class="navbar-nav flex-grow-1"> *@
+            @*         <li class="nav-item"> *@
+            @*             <a class="nav-link text-dark" asp-controller="Student" asp-action="Index">Students</a> *@
+            @*         </li> *@
+            @*         <li class="nav-item"> *@
+            @*             <a class="nav-link text-dark" asp-controller="Course" asp-action="Index">Courses</a> *@
+            @*         </li> *@
+            @*         <li class="nav-item"> *@
+            @*             <a class="nav-link text-dark" asp-controller="Enrollment" asp-action="Index">Enrollments</a> *@
+            @*         </li> *@
+            @*     </ul> *@
+            @* </div> *@
         </div>
     </nav>
 </header>
@@ -45,5 +45,6 @@
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
+@await RenderSectionAsync("Styles", required: false)
 </body>
 </html>
