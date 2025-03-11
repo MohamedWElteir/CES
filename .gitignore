@@ -1,0 +1,12 @@
+﻿.direnv
+.envrc
+.env
+.idea
+*.iml
+*.exe
+*.dll
+*.so
+*.dylib
+*.cache
+out
+gen

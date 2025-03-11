@@ -1,6 +1,13 @@
-﻿namespace CES.Services;
+﻿using CES.Models;
+
+namespace CES.Services;
 
 public interface IEnrollmentService
 {
-    
+    Task<IEnumerable<Enrollment>> GetAllEnrollmentsAsync();
+    Task<Enrollment?> GetEnrollmentByIdAsync(Guid id);
+    Task<Enrollment> CreateEnrollmentAsync(Enrollment enrollment);
+    Task DeleteEnrollmentAsync(Guid id);
+    Task<bool> IsCourseFullAsync(Guid courseId);
+    Task<bool> IsStudentEnrolledAsync(Guid courseId, Guid studentId);
 }

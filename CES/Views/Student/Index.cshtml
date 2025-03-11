@@ -1,0 +1,40 @@
+﻿@model System.Collections.Generic.IEnumerable<CES.Models.Student>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Students</h2>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Student</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Date of Birth</th>
+        <th>National ID</th>
+        <th>Phone Number</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var student in Model)
+    {
+    <tr>
+        <td>@student.FullName</td>
+        <td>@student.Email</td>
+        <td>@student.DateOfBirth.ToShortDateString()</td>
+        <td>@student.NationalId</td>
+        <td>@student.PhoneNumber</td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@student.StudentIdGuid">Edit</a> |
+            <a asp-action="Delete" asp-route-id="@student.StudentIdGuid">Delete</a>
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>

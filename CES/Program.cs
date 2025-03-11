@@ -1,8 +1,16 @@
+using CES.BusinessImplementations;
+using CES.DbContext;
+using CES.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<MyDbContext>();
 
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
