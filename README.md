@@ -1,7 +1,20 @@
 # Course Enrollment System (CES)
 ***
 ### A web-based application built with ASP.NET Core MVC that manages student enrollments in courses.
+***
+# Update: now you can use the container instead of running the application locally
+## How to Run the container
+1. Pull the image from docker hub
+```bash
+docker pull mohamedelteir/ces
+```
+2. Run the container
+```bash
+docker run -d -p 8080:80 mohamedelteir/ces
+```
+3. Open your browser and navigate to `http://localhost:8080`
 
+***
 ### Features:
 - **Student Management**
     - Create, view, edit, and delete student records

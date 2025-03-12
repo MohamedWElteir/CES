@@ -19,7 +19,6 @@ public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
         base.OnModelCreating(modelBuilder);
 
 
-
         modelBuilder.Entity<Enrollment>()
             .HasOne(e => e.Student)
             .WithMany(s => s.Enrollments)
