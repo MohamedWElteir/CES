@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CES.Models;
 
-public class Student
+public sealed class Student
 {
     [Key]
     public Guid StudentIdGuid { get; set; }
@@ -31,5 +31,5 @@ public class Student
     [MaxLength(11)]
     public string? PhoneNumber { get; set; }
 
-    public virtual ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
+    public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
 }

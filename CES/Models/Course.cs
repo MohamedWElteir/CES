@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CES.Models;
 
-public class Course
+public sealed class Course
 {
 
     [Key]
