@@ -48,8 +48,16 @@ public class CourseController(ICourseService courseService, IEnrollmentService e
     {
         if (!ModelState.IsValid) return View(course);
 
-        await courseService.UpdateCourseAsync(course);
-        return RedirectToAction(nameof(Index));
+        try
+        {
+            await courseService.UpdateCourseAsync(course);
+            return RedirectToAction(nameof(Index));
+        }
+        catch (InvalidOperationException ex)
+        {
+            ModelState.AddModelError("MaximumCapacity", ex.Message);
+            return View(course);
+        }
     }
 
     public async Task<IActionResult> Delete(Guid id)

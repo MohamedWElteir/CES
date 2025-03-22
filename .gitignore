@@ -10,3 +10,6 @@
 *.cache
 out
 gen
+\bin
+\obj
+\Debug

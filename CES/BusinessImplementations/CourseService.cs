@@ -12,10 +12,9 @@ public class CourseService(MyDbContext dbContext) : ICourseService
         var totalItems = await dbContext.Courses.CountAsync();
         var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
 
-        if (page > totalPages)
-        {
-            return ([], totalPages);
-        }
+        if (page > totalPages) return ([], totalPages);
+
+
         var courses = await dbContext.Courses
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
@@ -44,6 +43,17 @@ public class CourseService(MyDbContext dbContext) : ICourseService
 
     public async Task UpdateCourseAsync(Course course)
     {
+
+        var enrollmentCount = await dbContext.Enrollments
+            .CountAsync(e => e.CourseIdGuid == course.CourseIdGuid);
+
+        if (course.MaximumCapacity < enrollmentCount)
+        {
+            throw new InvalidOperationException(
+                $"Cannot reduce course capacity to {course.MaximumCapacity}. Current enrollment count is {enrollmentCount}."
+            );
+        }
+
         dbContext.Entry(course).State = EntityState.Modified;
         await dbContext.SaveChangesAsync();
     }
