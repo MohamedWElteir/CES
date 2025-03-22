@@ -12,6 +12,10 @@ public class CourseService(MyDbContext dbContext) : ICourseService
         var totalItems = await dbContext.Courses.CountAsync();
         var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
 
+        if (page > totalPages)
+        {
+            return ([], totalPages);
+        }
         var courses = await dbContext.Courses
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
