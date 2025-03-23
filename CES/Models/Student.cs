@@ -6,7 +6,7 @@ namespace CES.Models;
 public sealed class Student
 {
     [Key]
-    public Guid StudentIdGuid { get; set; }
+    public Guid StudentGuid { get; set; }
 
     [Required]
     [MaxLength(100)]

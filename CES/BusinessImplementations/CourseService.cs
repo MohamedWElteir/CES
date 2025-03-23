@@ -35,7 +35,7 @@ public class CourseService(MyDbContext dbContext) : ICourseService
 
     public async Task<Course> CreateCourseAsync(Course course)
     {
-        course.CourseIdGuid = Guid.NewGuid();
+        course.CourseGuid = Guid.NewGuid();
         dbContext.Courses.Add(course);
         await dbContext.SaveChangesAsync();
         return course;
@@ -45,7 +45,7 @@ public class CourseService(MyDbContext dbContext) : ICourseService
     {
 
         var enrollmentCount = await dbContext.Enrollments
-            .CountAsync(e => e.CourseIdGuid == course.CourseIdGuid);
+            .CountAsync(e => e.CourseGuid == course.CourseGuid);
 
         if (course.MaximumCapacity < enrollmentCount)
         {

@@ -22,13 +22,14 @@ public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
         modelBuilder.Entity<Enrollment>()
             .HasOne(e => e.Student)
             .WithMany(s => s.Enrollments)
-            .HasForeignKey(e => e.StudentIdGuid)
+            .HasForeignKey(e => e.StudentGuid)
             .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Enrollment>()
             .HasOne(e => e.Course)
             .WithMany()
-            .HasForeignKey(e => e.CourseIdGuid);
+            .HasForeignKey(e => e.CourseGuid)
+            .OnDelete(DeleteBehavior.Cascade);
 
         var studentIdGuid1 = Guid.NewGuid();
         var studentIdGuid2 = Guid.NewGuid();
@@ -38,7 +39,7 @@ public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
         modelBuilder.Entity<Student>().HasData(
             new Student
             {
-                StudentIdGuid = studentIdGuid1,
+                StudentGuid = studentIdGuid1,
                 FullName = "John Doe",
                 Email = "john.doe@example.com",
                 DateOfBirth = new DateTime(2000, 1, 1),
@@ -47,7 +48,7 @@ public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
             },
             new Student
             {
-                StudentIdGuid = studentIdGuid2,
+                StudentGuid = studentIdGuid2,
                 FullName = "Jane Smith",
                 Email = "jane.smith@example.com",
                 DateOfBirth = new DateTime(1999, 5, 15),
@@ -60,21 +61,21 @@ public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
         modelBuilder.Entity<Course>().HasData(
             new Course
             {
-                CourseIdGuid = courseIdGuid1,
+                CourseGuid = courseIdGuid1,
                 Title = "Introduction to Programming",
                 Description = "Learn the basics of programming.",
                 MaximumCapacity = 30
             },
             new Course
             {
-                CourseIdGuid = courseIdGuid2,
+                CourseGuid = courseIdGuid2,
                 Title = "Advanced Databases",
                 Description = "Deep dive into database management systems.",
                 MaximumCapacity = 25
             },
             new Course
             {
-                CourseIdGuid = Guid.NewGuid(),
+                CourseGuid = Guid.NewGuid(),
                 Title = "Advanced Programming",
                 MaximumCapacity = 5            }
         );
@@ -83,15 +84,15 @@ public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
         modelBuilder.Entity<Enrollment>().HasData(
             new Enrollment
             {
-                EnrollmentIdGuid = Guid.NewGuid(),
-                StudentIdGuid = Guid.Parse(studentIdGuid1.ToString()),
-                CourseIdGuid = Guid.Parse(courseIdGuid1.ToString())
+                EnrollmentGuid = Guid.NewGuid(),
+                StudentGuid = Guid.Parse(studentIdGuid1.ToString()),
+                CourseGuid = Guid.Parse(courseIdGuid1.ToString())
             },
             new Enrollment
             {
-                EnrollmentIdGuid = Guid.NewGuid(),
-                StudentIdGuid = Guid.Parse(studentIdGuid2.ToString()),
-                CourseIdGuid = Guid.Parse(courseIdGuid2.ToString())
+                EnrollmentGuid = Guid.NewGuid(),
+                StudentGuid = Guid.Parse(studentIdGuid2.ToString()),
+                CourseGuid = Guid.Parse(courseIdGuid2.ToString())
             }
         );
     }

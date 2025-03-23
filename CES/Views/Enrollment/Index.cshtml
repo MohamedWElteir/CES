@@ -21,7 +21,7 @@
             <td>@enrollment.Student?.FullName</td>
             <td>@enrollment.Course?.Title</td>
             <td>
-                <a asp-action="Delete" asp-route-id="@enrollment.EnrollmentIdGuid" class="btn btn-danger btn-sm">Delete</a>
+                <a asp-action="Delete" asp-route-id="@enrollment.EnrollmentGuid" class="btn btn-danger btn-sm">Delete</a>
             </td>
         </tr>
     }

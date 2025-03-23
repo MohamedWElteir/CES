@@ -11,6 +11,7 @@ builder.Services.AddDbContext<MyDbContext>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
+builder.Services.AddHealthChecks();
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -23,6 +24,7 @@ using (var scope = app.Services.CreateScope())
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
+    app.MapHealthChecks("/health");
     app.UseHsts();
 }
 
@@ -32,7 +34,6 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapStaticAssets();
-
 app.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}")
