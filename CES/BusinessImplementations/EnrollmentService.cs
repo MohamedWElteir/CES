@@ -22,13 +22,6 @@ public class EnrollmentService(MyDbContext dbContext) : IEnrollmentService
         return (enrollments, totalPages);
     }
 
-    public async Task<IEnumerable<Enrollment>> GetAllEnrollmentsAsync()
-    {
-        return await dbContext.Enrollments
-            .Include(e => e.Student)
-            .Include(e => e.Course)
-            .ToListAsync();
-    }
 
     public async Task<Enrollment?> GetEnrollmentByIdAsync(Guid id)
     {

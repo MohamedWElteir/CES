@@ -6,6 +6,7 @@ public interface IStudentService
 {
     Task<(IEnumerable<Student> Students, int TotalPages)> GetPaginatedStudentsAsync(int page, int pageSize);
 
+    [Obsolete("Use GetPaginatedStudentsAsync instead")]
     Task<IEnumerable<Student>> GetAllStudentsAsync();
     Task<Student?> GetStudentByIdAsync(Guid id);
     Task<Student> CreateStudentAsync(Student student);

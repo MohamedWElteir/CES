@@ -23,13 +23,13 @@ public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
             .HasOne(e => e.Student)
             .WithMany(s => s.Enrollments)
             .HasForeignKey(e => e.StudentGuid)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.ClientNoAction);
 
         modelBuilder.Entity<Enrollment>()
             .HasOne(e => e.Course)
             .WithMany()
             .HasForeignKey(e => e.CourseGuid)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.ClientNoAction);
 
         var studentIdGuid1 = Guid.NewGuid();
         var studentIdGuid2 = Guid.NewGuid();
