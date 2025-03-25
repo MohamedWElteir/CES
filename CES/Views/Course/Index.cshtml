@@ -19,8 +19,8 @@
     <tbody>
     @foreach (var course in Model)
     {
-        var enrolledCount = ViewBag.EnrollmentCounts != null && ViewBag.EnrollmentCounts.ContainsKey(course.CourseGuid)
-            ? ViewBag.EnrollmentCounts[course.CourseGuid]
+        var enrolledCount = ViewBag.EnrollmentCounts != null && ViewBag.EnrollmentCounts.ContainsKey(course.CourseId)
+            ? ViewBag.EnrollmentCounts[course.CourseId]
             : 0;
         var availableSlots = course.MaximumCapacity - enrolledCount;
 
@@ -30,8 +30,8 @@
             <td>@course.MaximumCapacity</td>
             <td>@availableSlots</td>
             <td>
-                <a asp-action="Edit" asp-route-id="@course.CourseGuid" class="btn btn-warning btn-sm">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@course.CourseGuid" class="btn btn-danger btn-sm">Delete</a>
+                <a asp-action="Edit" asp-route-id="@course.CourseId" class="btn btn-warning btn-sm">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@course.CourseId" class="btn btn-danger btn-sm">Delete</a>
             </td>
         </tr>
     }

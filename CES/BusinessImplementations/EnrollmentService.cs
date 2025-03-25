@@ -28,22 +28,22 @@ public class EnrollmentService(MyDbContext dbContext) : IEnrollmentService
         return await dbContext.Enrollments
             .Include(e => e.Student)
             .Include(e => e.Course)
-            .FirstOrDefaultAsync(e => e.EnrollmentGuid == id);
+            .FirstOrDefaultAsync(e => e.EnrollmentId == id);
     }
 
     public async Task<Enrollment> CreateEnrollmentAsync(Enrollment enrollment)
     {
-        if (await IsCourseFullAsync(enrollment.CourseGuid))
+        if (await IsCourseFullAsync(enrollment.CourseId))
         {
             throw new InvalidOperationException("Course is full");
         }
 
-        if (await IsStudentEnrolledAsync(enrollment.CourseGuid, enrollment.StudentGuid))
+        if (await IsStudentEnrolledAsync(enrollment.CourseId, enrollment.StudentId))
         {
             throw new InvalidOperationException("Student is already enrolled in this course");
         }
 
-        enrollment.EnrollmentGuid = Guid.NewGuid();
+        enrollment.EnrollmentId = Guid.NewGuid();
         dbContext.Enrollments.Add(enrollment);
         await dbContext.SaveChangesAsync();
         return enrollment;
@@ -64,13 +64,13 @@ public class EnrollmentService(MyDbContext dbContext) : IEnrollmentService
         var course = await dbContext.Courses.FindAsync(courseId);
         if (course == null) return false;
 
-        var enrollmentCount = await dbContext.Enrollments.CountAsync(e => e.CourseGuid == courseId);
+        var enrollmentCount = await dbContext.Enrollments.CountAsync(e => e.CourseId == courseId);
         return enrollmentCount >= course.MaximumCapacity;
     }
 
     public async Task<bool> IsStudentEnrolledAsync(Guid courseId, Guid studentId)
     {
-        return await dbContext.Enrollments.AnyAsync(e => e.CourseGuid == courseId && e.StudentGuid == studentId);
+        return await dbContext.Enrollments.AnyAsync(e => e.CourseId == courseId && e.StudentId == studentId);
     }
 
     public async Task<int> GetAvailableSlotsAsync(Guid courseId)
@@ -78,14 +78,14 @@ public class EnrollmentService(MyDbContext dbContext) : IEnrollmentService
         var course = await dbContext.Courses.FindAsync(courseId);
         if (course == null) return 0;
 
-        var enrollmentCount = await dbContext.Enrollments.CountAsync(e => e.CourseGuid == courseId);
+        var enrollmentCount = await dbContext.Enrollments.CountAsync(e => e.CourseId == courseId);
         return course.MaximumCapacity - enrollmentCount;
     }
 
     public async Task<Dictionary<Guid, int>> GetEnrollmentCountsAsync()
     {
        return await dbContext.Enrollments
-           .GroupBy(e => e.CourseGuid)
+           .GroupBy(e => e.CourseId)
            .Select(g => new { CourseId = g.Key, Count = g.Count() })
            .ToDictionaryAsync(x => x.CourseId, x => x.Count);
 

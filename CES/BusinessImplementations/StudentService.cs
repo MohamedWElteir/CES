@@ -33,7 +33,7 @@ public class StudentService(MyDbContext dbContext) : IStudentService
     public async Task<Student> CreateStudentAsync(Student student)
     {
 
-            student.StudentGuid = Guid.NewGuid();
+            student.StudentId = Guid.NewGuid();
             dbContext.Students.Add(student);
             await dbContext.SaveChangesAsync();
             return student;
@@ -50,7 +50,7 @@ public class StudentService(MyDbContext dbContext) : IStudentService
     {
         var student = await dbContext.Students
             .Include(s => s.Enrollments)
-            .FirstOrDefaultAsync(s => s.StudentGuid == id);
+            .FirstOrDefaultAsync(s => s.StudentId == id);
         if (student != null)
         {
             dbContext.Enrollments.RemoveRange(student.Enrollments);

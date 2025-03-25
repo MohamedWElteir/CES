@@ -7,7 +7,7 @@ public sealed class Course
 {
 
     [Key]
-    public Guid CourseGuid { get; set; }
+    public Guid CourseId { get; set; }
 
     [Required]
     [MaxLength(100)]
