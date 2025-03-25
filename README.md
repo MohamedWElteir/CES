@@ -1,5 +1,7 @@
 # Course Enrollment System (CES)
+[![Build and Push Docker Image](https://github.com/MohamedWElteir/CES/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/MohamedWElteir/CES/actions/workflows/docker-publish.yml)
 ***
+
 ### A web-based application built with ASP.NET Core MVC that manages student enrollments in courses.
 ***
 # Update: now you can use the container instead of running the application locally
