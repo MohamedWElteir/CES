@@ -11,16 +11,16 @@ public sealed class Student
     [Required]
     [MaxLength(100)]
     [DisplayName("Full Name")]
-    public string FullName { get; set; } = string.Empty;
+    public required string FullName { get; init; }
 
     [Required]
     [EmailAddress]
     [MaxLength(100)]
-    public string Email { get; set; } = string.Empty;
+    public required string Email { get; init; }
 
     [Required]
     [DisplayName("Date of Birth")]
-    public DateTime DateOfBirth { get; set; }
+    public required DateTime DateOfBirth { get; init; }
 
     [Required]
     [StringLength(14, ErrorMessage = "National ID must be 14 digits")]
@@ -29,7 +29,7 @@ public sealed class Student
 
 
     [StringLength(11, ErrorMessage = "Phone number must be 11 digits")]
-    public string? PhoneNumber { get; set; }
+    public string? PhoneNumber { get; init; }
 
-    public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
+    public ICollection<Enrollment> Enrollments { get; init; } = new List<Enrollment>();
 }

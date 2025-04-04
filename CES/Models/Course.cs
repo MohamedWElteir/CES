@@ -12,15 +12,15 @@ public sealed class Course
     [Required]
     [MaxLength(100)]
     [DisplayName("Course Title")]
-    public string Title { get; init; } = string.Empty;
+    public required string Title { get; init; }
 
 
     [MaxLength(int.MaxValue)]
-    public string? Description { get; set; }
+    public string? Description { get; init; }
 
     [Required]
     [Range(1, int.MaxValue)]
     [DisplayName("Maximum Capacity")]
-    public int MaximumCapacity { get; init; }
+    public required int MaximumCapacity { get; init; }
 
 }
